@@ -30,6 +30,6 @@ with open(file_path) as f:
         for word in banned_words:
             if(word in line.lower().strip()):
                 word_found += 1
-                print("Found %s on line %d"%(word,i))
+                print("Found \"%s\" on line %d"%(word,i))
 
 sys.exit(word_found)
