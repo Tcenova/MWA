@@ -26,10 +26,11 @@ if not os.path.exists(file_path):
 word_found = 0
 
 with open(file_path) as f:
-    for i,line in enumerate(f):
+    for i,line in enumerate(f,1):
         for word in banned_words:
-            if(word in line.lower().strip()):
+            count = line.lower().strip().count(word)
+            if(count > 0):
                 word_found += 1
-                print("Found \"%s\" on line %d"%(word,i))
+                print("Found %d \"%s\" on line %d"%(count, word,i))
 
 sys.exit(word_found)
