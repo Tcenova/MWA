@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+from __future__ import print_function
 
 import os
 import sys
 import subprocess
 
-script_dir = os.path.dirname(__file__)
-words_file = os.path.join(script_dir, "words.txt")
+script_dir = os.path.dirname(os.path.realpath(__file__))
+words_file = os.path.join(script_dir, "en_US.badWords")
 cwd = os.getcwd()
 
 os.chdir(script_dir)
